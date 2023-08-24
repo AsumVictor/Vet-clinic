@@ -1,4 +1,3 @@
-/* Populate database with sample data. */
 
 INSERT INTO animals VALUES ('Agumon', '2020-02-03', 0, TRUE, 10.23);
 INSERT INTO animals VALUES ('Gabumon', '2018-11-15', 2, TRUE, 8);
