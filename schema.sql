@@ -9,4 +9,23 @@ CREATE TABLE animals (
     weight_kg DECIMAL NOT NULL
 );
 
-ALTER TABLE animals ADD COLUMN species VARCHAR(100)
+ALTER TABLE animals ADD COLUMN species VARCHAR(100);
+
+CREATE TABLE owners (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    full_name TEXT,
+    age INT,
+);
+
+CREATE TABLE species (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name TEXT,
+);
+
+ALTER TABLE animals DROP COLUMN species;
+
+ALTER TABLE animals ADD COLUMN species_id INT REFERENCES species(id);
+
+ALTER TABLE animals ADD COLUMN owner_id INT REFERENCES owners(id);
+
+
